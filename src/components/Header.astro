@@ -1,13 +1,75 @@
 ---
+import Logo from "../components/Logo.astro";
+
+const menuItems = [
+  { url: "#", name: "Nieuws" },
+  { url: "#", name: "Partners" },
+  { url: "#", name: "Contact" },
+];
 ---
 
-<!-- <header class="bg-slate-900">
-  <div class="px-4 py-4 md:mx-auto md:max-w-screen-2xl md:px-8 md:py-12">
-    <div>Regenplus</div>
-    <nav>
-      <a href="#">Link 1</a>
-      <a href="#">Link 2</a>
-      <a href="#">Link 3</a>
-    </nav>
+<nav class="border-b border-slate-800 bg-slate-900">
+  <div class="mx-auto max-w-screen-xl px-4 py-6">
+    <div class="flex items-center justify-between">
+      <!-- logo -->
+      <Logo />
+      <!-- menu items -->
+      <div class="hidden items-center space-x-12 md:flex">
+        {
+          menuItems.map((menuItem) => (
+            <a
+              href={menuItem.url}
+              class="text-md font-semibold text-slate-100 hover:text-slate-200"
+            >
+              {menuItem.name}
+            </a>
+          ))
+        }
+      </div>
+      <!-- mobile menu icon -->
+      <div class="flex md:hidden">
+        <button id="menu-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="h-6 w-6 stroke-slate-400"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- mobile menu items -->
+    <div
+      class="-mx-4 hidden pt-8"
+      id="menu-items"
+    >
+      {
+        menuItems.map((menuItem) => (
+          <a
+            href={menuItem.url}
+            class="font-md block py-3 text-center font-semibold text-slate-100 hover:bg-slate-500"
+          >
+            {menuItem.name}
+          </a>
+        ))
+      }
+    </div>
   </div>
-</header> -->
+</nav>
+
+<script>
+  const menuIcon = document.querySelector("#menu-icon") as HTMLElement;
+  const menuItems = document.querySelector("#menu-items") as HTMLElement;
+
+  menuIcon.addEventListener("click", () => {
+    menuItems.classList.toggle("hidden");
+  });
+</script>

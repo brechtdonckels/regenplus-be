@@ -1,4 +1,6 @@
 ---
+import Header from "../components/Header.astro";
+
 const { pageTitle = "Regenplus" } = Astro.props;
 ---
 
@@ -21,6 +23,7 @@ const { pageTitle = "Regenplus" } = Astro.props;
     <title>{pageTitle}</title>
   </head>
   <body>
+    <Header />
     <slot />
   </body>
 </html>
