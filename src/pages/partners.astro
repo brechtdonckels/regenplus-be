@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import Partner from "../components/Partner.astro";
+import PageHeading from "../components/PageHeading.astro";
+
+const pageHeading = "Partners";
+const pageIntro =
+  "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, voluptates explicabo natus laborum suscipit sequi praesentium nobis labore commodi odio cumque sit laudantium totam architecto? Ducimus omnis alias distinctio expedita molestiae est enim totam? Suscipit, dicta adipisci aspernatur atque earum accusantium sapiente voluptatum perferendis ipsa?";
+
+const partners = [
+  {
+    img: "/logo-aquafin.png",
+    alt: "logo Aquafin",
+    name: "Aquafin",
+    url: "https://www.aquafin.be/nl-be",
+    description:
+      "Aquafin werkt aan propere waterlopen en een leefomgeving in harmonie met water. We zuiveren huishoudelijk afvalwater en maken plaats voor regenwater op openbaar domein. Regenwater infiltreren en bufferen, is het beste antwoord op zowel wateroverlast als droogte.",
+    contact: "Brecht Donckels",
+    email: "brecht.donckels@aquafin.be",
+  },
+  {
+    img: "/logo-de-watergroep.png",
+    alt: "logo De Watergroep",
+    name: "De Watergroep",
+    url: "https://www.dewatergroep.be/",
+    description:
+      "De Watergroep is het grootste drinkwaterbedrijf van Vlaanderen en heeft heel wat ervaring met de coördinatie van onderzoeksprojecten rond water. De geselecteerde particulieren zijn allen klant bij De Watergroep.",
+    contact: "Evelyn De Meyer",
+    email: "mailto:evelyn.demeyer@dewatergroep.be",
+  },
+  {
+    img: "/logo-sumaqua.png",
+    alt: "logo Sumaqua",
+    name: "Sumaqua",
+    url: "https://www.sumaqua.be/",
+    description:
+      "Sumaqua is een spin-out ontstaan uit de KU Leuven dat focust op digitalisering met waterdata. Zij ontwikkelen slimme algoritmes en modellen voor de watersector. Zij hebben heel wat expertise met het project RainBrain opgebouwd rond sturing van regenwaterputten. Sumaqua zal het werkpakket rond de ontwikkeling van sturingen trekken.",
+    contact: "Vincent Wolfs",
+    email: "mailto:vincent.wolfs@sumaqua.be",
+  },
+  {
+    img: "/logo-vlakwa.png",
+    alt: "logo Vlakwa",
+    name: "Vlakwa",
+    url: "https://vlakwa.be/nl",
+    description:
+      "Vlakwa helpt ondernemers, onderzoekers en overheden bij de zoektocht naar duurzame en innovatieve wateroplossingen en de implementatie ervan.",
+    contact: "Veerle Depuydt",
+    email: "mailto:veerle.depuydt@vlakwa.be",
+  },
+  {
+    img: "/logo-ugent.png",
+    alt: "logo UGENT",
+    name: "Onderzoeksgroep Atmosferische Fysica, Faculteit Wetenschappen (Universiteit Gent)",
+    url: "https://www.ugent.be/we/physics-astronomy/en/research/atmophys/overview.htm",
+    description:
+      "De onderzoeksgroep Atmosferische Fysica, Faculteit Wetenschappen, van Universiteit Gent neemt deel in aan het project door een aantal pluviometers ter beschikking te stellen voor datacaptatie en voorspelling in de lokale gemeentes. Verder geven zij expertise over interpretatie van de gegevens.",
+    contact: "Prof. dr. ir. Steven Caluwaerts",
+    email: "mailto:steven.caluwaerts@ugent.be",
+  },
+];
+---
+
+<Layout>
+  <section>
+    <div class="mx-auto max-w-screen-xl px-4 pt-12 pb-6">
+      <PageHeading
+        pageHeading={pageHeading}
+        pageIntro={pageIntro}
+      />
+      {
+        partners.map((partner) => (
+          <Partner
+            logoImg={partner.img}
+            logoAltText={partner.alt}
+            partnerUrl={partner.url}
+            partnerDescription={partner.description}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>

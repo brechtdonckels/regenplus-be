@@ -1,0 +1,16 @@
+---
+const { logoImg, logoAltText, partnerDescription, partnerUrl } = Astro.props;
+---
+
+<div
+  class="mb-12 flex flex-col space-y-8 text-base sm:flex-row sm:items-center sm:space-x-8 md:text-lg lg:space-x-12 xl:text-xl"
+>
+  <a href={partnerUrl}>
+    <img
+      src={logoImg}
+      alt={logoAltText}
+      class="mx-auto w-24 basis-1/5 sm:w-48"
+    />
+  </a>
+  <p class="basis-4/5">{partnerDescription}</p>
+</div>
