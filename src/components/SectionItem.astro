@@ -1,0 +1,12 @@
+---
+const { sectionItemTitle, sectionItemText } = Astro.props;
+---
+
+<div class="md:basis-1/3">
+  <h3 class="mb-4 text-xl font-semibold text-slate-900">
+    {sectionItemTitle}
+  </h3>
+  <p class="text-slate-500">
+    {sectionItemText}
+  </p>
+</div>
