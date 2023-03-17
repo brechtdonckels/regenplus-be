@@ -1,0 +1,42 @@
+---
+import SectionHeading from "../components/SectionHeading.astro";
+import SectionItem from "../components/SectionItem.astro";
+
+const sectionHeading = "Wat zijn de doelstellingen van Regenplus?";
+const sectionIntro =
+  "Regenplus is een Slimme Regioproject van de provincie Vlaams-Brabant. Het doel van dit soort projecten is het demonstreren van technologie. Duwtje in de rug geven. Regenwaterputten staan centraal in dit project.";
+
+const sectionItems = [
+  {
+    title: "Vraag naar drinkwater beter inschatten",
+    text: "Wanneer de regenput leeg is, zijn burgers genoodzaakt over te schakelen op drinkwater. Als er echter veel burgers zijn die dit doen, ontstaat er een piekvraag die de drinkwaterproducent moet opvangen. Als we meer inzicht hebben in de mate waarin de regenwaterputten van Vlamingen gevuld zijn, kan dit leiden tot lagere kosten voor de productie van drinkwater.",
+  },
+  {
+    title: "Betere buffering tijdens regenbuien",
+    text: "Bij zware regenval wordt er een enorme hoeveelheid regenwater naar de riolering afgevoerd, wat kan leiden tot wateroverlast en overstort. Door de regenwaterputten slim te sturen, kan de piekbelasting worden verminderd zonder dat dit gevolgen heeft voor het hergebruik van regenwater.. ",
+  },
+  {
+    title: "Sensibiliseren van het waterverbruik",
+    text: "Vaak weten burgers niet hoeveel regenwater er beschikbaar is. Door dat inzichtelijk te maken kunnen burgers aangemoedigd worden om rationeler en duurzamer met regenwater om te gaan.",
+  },
+];
+---
+
+<section class="bg-white">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 md:py-16 lg:py-24">
+    <SectionHeading
+      sectionHeading={sectionHeading}
+      sectionIntro={sectionIntro}
+    />
+    <div class="md:flex md:justify-between md:space-x-12">
+      {
+        sectionItems.map((item) => (
+          <SectionItem
+            sectionItemTitle={item.title}
+            sectionItemText={item.text}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>

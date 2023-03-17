@@ -2,48 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 
 import Hero from "../components/Hero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
-import SectionItem from "../components/SectionItem.astro";
 
-const sectionHeading = "Wat zijn de doelstellingen van Regenplus?";
-const sectionIntro =
-  "Regenplus is een Slimme Regioproject van de provincie Vlaams-Brabant. Het doel van dit soort projecten is het demonstreren van technologie. Duwtje in de rug geven. Regenwaterputten staan centraal in dit project.";
-
-const sectionItems = [
-  {
-    title: "Vraag naar drinkwater beter inschatten",
-    text: "Als de regenput leeg is, dan schakelt de burger over op drinkwater. Als veel burgers dat doen, dan ontstaat er een piekvraag die moet opgevangen worden bij de drinkwaterproducent. Inzicht in de vullingsgraad van de regenwaterputten van de Vlaming kan dus resulteren in minder kosten voor de productie van drinkwater.",
-  },
-  {
-    title: "Betere buffering tijdens regenbuien",
-    text: "Tijdens hevige regenbuien stroomt er een enorme hoeveelheid regenwater naar de riolering, met wateroverlast en overstortwerking als mogelijke gevolgen. Door regenwaterputten slim te sturen kan de piekbelasting verkleind worden, zonder gevolgen voor hergebruik van regenwater. ",
-  },
-  {
-    title: "Sensibiliseren van het waterverbruik",
-    text: "Vaak weten burgers niet hoeveel regenwater er beschikbaar is. Door dat inzichtelijk te maken kunnen burgers aangemoedigd worden om rationeler en duurzamer met regenwater om te gaan.",
-  },
-];
+import SectionObjectives from "../components/SectionObjectives.astro";
 ---
 
 <Layout>
   <Hero />
-  <section class="bg-white">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 md:py-16 lg:py-24">
-      <SectionHeading
-        sectionHeading={sectionHeading}
-        sectionIntro={sectionIntro}
-      />
-      <div class="md:flex md:justify-between md:space-x-12 md:text-center">
-        {
-          sectionItems.map((item) => (
-            <SectionItem
-              sectionItemTitle={item.title}
-              sectionItemText={item.text}
-            />
-          ))
-        }
-      </div>
-    </div>
-  </section>
-  <!--  -->
+  <SectionObjectives />
 </Layout>
