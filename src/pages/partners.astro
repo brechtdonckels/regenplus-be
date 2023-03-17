@@ -8,17 +8,59 @@ const pageHeading = "Partners";
 const pageIntro =
   "Regenplus is een demonstratieproject waar de ervaring van verschillende partners samen komen. Met de steun van de provincie Vlaams-Brabant, Vilvoorde, Tervuren, Sint-Genesius-Rode en Zemst.";
 
-const partners = [
+const state = [
   {
-    img: "/logo-aquafin.png",
-    alt: "logo Aquafin",
-    name: "Aquafin",
-    url: "https://www.aquafin.be/nl-be",
+    img: "/logo-vlaams-brabant.png",
+    alt: "logo Provincie Vlaams Brabant",
+    name: "Provincie Vlaams-Brabant",
+    url: "https://www.vlaamsbrabant.be/nl",
     description:
-      "Aquafin werkt aan propere waterlopen en een leefomgeving in harmonie met water. We zuiveren huishoudelijk afvalwater en maken plaats voor regenwater op openbaar domein. Regenwater infiltreren en bufferen, is het beste antwoord op zowel wateroverlast als droogte.",
-    contact: "Brecht Donckels",
-    email: "brecht.donckels@aquafin.be",
+      "De Provincie Vlaams-Brabant verleent via de Slimme Regioprojecten subsidie aan projecten met een slimme oplossing voor maatschappelijke uitdagingen op vlak van mobiliteit, economie, waterlopen, energie, toerisme, recreatie en bestuur die onze provincie leefbaarder maakt voor de inwoners?",
+    contact: "Slimme Regioprojecten",
+    email: "slimmeregio@vlaamsbrabant.be",
   },
+];
+
+const municipalities = [
+  {
+    img: "/logo-tervuren.png",
+    alt: "logo Tervuren",
+    name: "Tervuren",
+    url: "https://www.tervuren.be/",
+    description: "",
+    contact: "",
+    email: "",
+  },
+  {
+    img: "/logo-rode.png",
+    alt: "logo Sint-Genesius-Rode",
+    name: "Sint-Genesius-Rode",
+    url: "https://www.sint-genesius-rode.be/",
+    description: "",
+    contact: "",
+    email: "",
+  },
+  {
+    img: "/logo-vilvoorde.png",
+    alt: "logo Vilvoorde",
+    name: "Vilvoorde",
+    url: "https://www.vilvoorde.be/",
+    description: "",
+    contact: "",
+    email: "",
+  },
+  {
+    img: "/logo-zemst.png",
+    alt: "logo Zemst",
+    name: "Zemst",
+    url: "https://www.zemst .be/",
+    description: "",
+    contact: "",
+    email: "",
+  },
+];
+
+const partners = [
   {
     img: "/logo-de-watergroep.png",
     alt: "logo De Watergroep",
@@ -28,6 +70,16 @@ const partners = [
       "De Watergroep is het grootste drinkwaterbedrijf van Vlaanderen en heeft heel wat ervaring met de coördinatie van onderzoeksprojecten rond water. De geselecteerde particulieren zijn allen klant bij De Watergroep.",
     contact: "Evelyn De Meyer",
     email: "mailto:evelyn.demeyer@dewatergroep.be",
+  },
+  {
+    img: "/logo-aquafin.png",
+    alt: "logo Aquafin",
+    name: "Aquafin",
+    url: "https://www.aquafin.be/nl-be",
+    description:
+      "Aquafin werkt aan propere waterlopen en een leefomgeving in harmonie met water. We zuiveren huishoudelijk afvalwater en maken plaats voor regenwater op openbaar domein. Regenwater infiltreren en bufferen, is het beste antwoord op zowel wateroverlast als droogte.",
+    contact: "Brecht Donckels",
+    email: "brecht.donckels@aquafin.be",
   },
   {
     img: "/logo-sumaqua.png",
@@ -64,13 +116,39 @@ const partners = [
 
 <Layout>
   <section>
-    <div class="mx-auto max-w-screen-xl px-4 pt-12 pb-6">
+    <div class="mx-auto max-w-screen-xl px-4 py-8 md:py-16">
       <PageHeading
         pageHeading={pageHeading}
         pageIntro={pageIntro}
       />
+
+      <h3 class="mb-8 text-xl font-semibold">Subsidieverlener</h3>
+      {
+        state.map((partner) => (
+          <Partner
+            logoImg={partner.img}
+            logoAltText={partner.alt}
+            partnerUrl={partner.url}
+            partnerDescription={partner.description}
+          />
+        ))
+      }
+
+      <h3 class="mb-8 text-xl font-semibold">Projectpartners</h3>
       {
         partners.map((partner) => (
+          <Partner
+            logoImg={partner.img}
+            logoAltText={partner.alt}
+            partnerUrl={partner.url}
+            partnerDescription={partner.description}
+          />
+        ))
+      }
+
+      <h3 class="mb-8 text-xl font-semibold">Deelnemende gemeenten</h3>
+      {
+        municipalities.map((partner) => (
           <Partner
             logoImg={partner.img}
             logoAltText={partner.alt}
